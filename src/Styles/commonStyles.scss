@@ -1,0 +1,123 @@
+@use "variables" as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+  overflow-x: hidden;
+}
+
+::selection {
+  filter: brightness(0) saturate(100%) invert(53%) sepia(93%) saturate(1318%)
+    hue-rotate(345deg) brightness(98%) contrast(101%);
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.custom-container {
+  margin: 0 4vw;
+}
+
+.main-padding {
+  padding: 60px 0;
+}
+
+.d_btn {
+  display: block;
+  padding: 12px 35px;
+  margin: 0 auto;
+  background: $text-white;
+  border: 1px solid $btn-primary-bg;
+  font-weight: $font-weight-semiBold;
+  font-size: $font-size-base;
+  color: $btn-primary-bg;
+  cursor: pointer;
+  transition: all $transition-speed $transition-ease;
+  margin-bottom: 24px;
+
+  &:hover {
+    background: $btn-primary-bg;
+    color: $text-white;
+    border: 1px solid $text-white;
+    //   background: darken($btn-primary-bg, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+.c_title {
+  font-size: 32px;
+  font-weight: $font-weight-bold;
+  color: $text-primary;
+  margin-bottom: 8px;
+}
+
+.c_desc {
+  font-size: $font-size-base;
+  color: $text-secondary;
+  margin-bottom: 50px;
+}
+
+.more {
+  width: 35%;
+  padding: 18px 55px;
+  background: $btn-primary-bg;
+  font-weight: $font-weight-semiBold;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 2px solid transparent;
+  margin-top: 15px;
+  transition: all $transition-speed $transition-ease;
+
+  &:hover {
+    background: transparent;
+    border: 2px solid $btn-primary-bg;
+    color: $btn-primary-bg;
+  }
+}
+
+.nav-section {
+  padding: $spacing-md 0;
+
+  .nav_img {
+  }
+
+  .nav_links {
+    ul {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 0;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        a {
+          color: $primary;
+          font-weight: $font-weight-medium;
+          text-decoration: none;
+          font-size: $font-size-base;
+
+          &:hover {
+            color: $btn-primary-bg;
+          }
+        }
+      }
+    }
+  }
+
+  .info_icons {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 54px;
+  }
+}

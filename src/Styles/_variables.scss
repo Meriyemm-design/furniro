@@ -1,0 +1,125 @@
+// ========== COLOR PALETTE (Extracted from Home Design) ==========
+// $colors: (
+//   "primary": #2a254b,
+//   "primary-light": #4e4d93,
+//   "primary-dark": #1a1739,
+
+//   "secondary": #f9f9f9,
+//   "secondary-dark": #ebebeb,
+
+//   "accent": #ff0000,
+//   "accent-light": #ff6b6b,
+//   "accent-dark": #cc0000,
+
+//   "text-primary": #2a254b,
+//   "text-secondary": #505977,
+//   "text-muted": #726e8d,
+//   "text-light": #ffffff,
+//   "text-dark": #000000,
+
+//   "card-bg": #ffffff,
+//   "card-border": #ebebeb,
+//   "card-shadow": rgba(0, 0, 0, 0.08),
+//   "card-hover-shadow": rgba(0, 0, 0, 0.15),
+//   "btn-primary-bg": #2a254b,
+//   "btn-primary-hover": #1a1739,
+//   "btn-primary-text": #ffffff,
+
+//   "btn-secondary-bg": #f9f9f9,
+//   "btn-secondary-hover": #ebebeb,
+//   "btn-secondary-text": #2a254b,
+
+//   "price-regular": #2a254b,
+//   "price-sale": #ff0000,
+//   "price-old": #a0a0a0,
+
+//   "section-bg-light": #fafafa,
+//   "section-bg-dark": #2a254b,
+//   "section-border": #e0e0e0,
+// );
+
+// colors
+$primary: #2a254b;
+$primary-light: #4e4d93;
+$text-primary: #333333;
+$text-secondary: #666666;
+$text-card: #616161;
+$text-white: #fff;
+$text-gray: #3a3a3a;
+$bg-primary: #fff3e3;
+$label-bg: #e97171;
+$label-bg-new: #2EC1AC;
+$btn-primary-bg: #b88e2f;
+$bg-card: #FCF8F3;
+
+// Typography
+$font-primary: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+  "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+$font-secondary: "Satoshi", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+$font-size-base: 16px;
+$font-size-normal: 18px;
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semiBold: 600;
+$font-weight-bold: 700;
+
+// Spacing
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
+$spacing-xxl: 3rem;
+
+//  ========== Breakpoints  ==========
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
+$breakpoint-wide: 1280px;
+
+//  ========== Border Radius  ==========
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xlg: 20px;
+$border-radius-round: 50%;
+
+//  ========== Transitions  ==========
+$transition-speed: 0.3s;
+$transition-ease: ease-in-out;
+
+//  ========== opacity  ==========
+$opacity-high: 0.9;
+$opacity-medium: 0.6;
+$opacity-low: 0.3;
+
+//  ========== flex properties  ==========
+$flex: flex;
+$flex-between: space-between;
+$flex-center: center;
+$flex-gap: 20px;
+
+// ========== TYPOGRAPHY (Based on Modern E-commerce) ==========
+// $font-family: (
+//   "sans": "Inter",
+//   "Segoe UI",
+//   Roboto,
+//   -apple-system,
+//   BlinkMacSystemFont,
+//   sans-serif,
+//   "serif": "Georgia",
+//   "Times New Roman",
+//   serif,
+//   "mono": "SF Mono",
+//   "Monaco",
+//   "Consolas",
+//   monospace,
+//   "display": "Playfair Display",
+//   "Georgia",
+//   serif,
+// );
+
+// For headings in "Discover Our New Collection"
