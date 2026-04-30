@@ -166,36 +166,12 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="gallery-sect">
-        <div className="container gallery-wrapper">
-          <div className="gallery-grid">
-            <div className="gallery-card gallery-card-large">
-              <img src={image1} alt="Cozy lounge" />
-            </div>
-            <div className="gallery-card gallery-card-wide">
-              <img src={image2} alt="Minimal dining" />
-            </div>
-            <div className="gallery-card gallery-card-tall gallery-card-tall-1">
-              <img src={bedroom} alt="Bedroom inspiration" />
-            </div>
-            <div className="gallery-card gallery-card-tall gallery-card-tall-2">
-              <img src={living} alt="Living room detail" />
-            </div>
-            <div className="gallery-card gallery-card-small gallery-card-small-1">
-              <img src={r1} alt="Styled room" />
-            </div>
-            <div className="gallery-card gallery-card-small gallery-card-small-2">
-              <img src={r2} alt="Room accessories" />
-            </div>
-            <div className="gallery-card gallery-card-small gallery-card-small-3">
-              <img src={r3} alt="Bedroom decor" />
-            </div>
-            <div className="gallery-card gallery-card-small gallery-card-small-4">
-              <img src={image4} alt="Gallery decor" />
-            </div>
-          </div>
-        </div>
-      </div>
+
+
+
+      {/* 
+      
+      */}
     </>
   );
 };
