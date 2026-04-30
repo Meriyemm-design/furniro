@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./Pages/Home";
+import Shop from "./Pages/Shop"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/shop" element={<Shop />} />
         </Routes>
       <Footer />
       </BrowserRouter>
