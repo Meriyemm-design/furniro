@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/logo.webp";
 import profile from "../assets/profile.webp";
 import heart from "../assets/heart.webp";
@@ -20,16 +21,16 @@ const Header = () => {
               <div className="nav_links">
                 <ul>
                   <li>
-                    <a href=""> Home </a>
+                    <Link to="/"> Home </Link>
                   </li>
                   <li>
-                    <a href=""> Shop </a>
+                    <Link to="/shop"> Shop </Link>
                   </li>
                   <li>
-                    <a href=""> About </a>
+                    <Link to="/about"> About </Link>
                   </li>
                   <li>
-                    <a href=""> Contact </a>
+                    <Link to="/contact"> Contact </Link>
                   </li>
                 </ul>
               </div>
