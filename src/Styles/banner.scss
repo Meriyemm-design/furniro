@@ -2,4 +2,23 @@
 
 .banner-section {
     background-image: url('@/assets/Shop/banner.webp');
+    background-position: center;
+    background-size: cover;
+    height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .breadcrumb-banner {
+        display: flex;
+        width: 120px;
+        justify-content: center;
+        align-items: center;
+        .bc-name {
+            color: $text-primary;
+            font-size: $font-size-base;
+            font-weight: $font-weight-semiBold;
+            text-decoration: none;
+        }
+    }
 }

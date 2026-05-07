@@ -1,5 +1,7 @@
 import React from 'react'
-import "@styles/home.scss";
+// import "@styles/.scss";
+import '@styles/banner.scss'
+import { Link } from "react-router-dom";
 
 
 const Banner = () => {
@@ -7,10 +9,11 @@ const Banner = () => {
     <>
       <div className="banner-section main-padding">
         <div className="row justify-content-center ">
-          <div className="col-4 align-items-center">
-            <div className="banner-content">
-              <h1>Welcome to Our Store</h1>
-              <p>Discover the latest trends in furniture and home decor.</p>
+          <div className="text-center align-items-center">
+            <h1>Shop</h1>
+            <div className="breadcrumb-banner">
+              <Link to="/" className='bc-name'> Home</Link>&nbsp;
+              <span> <span>{'>'}</span> Shop</span>
             </div>
           </div>
         </div>
