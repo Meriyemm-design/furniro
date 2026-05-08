@@ -13,7 +13,7 @@ const Banner = () => {
             <h1>Shop</h1>
             <div className="breadcrumb-banner">
               <Link to="/" className='bc-name'> Home</Link>&nbsp;
-              <span> <span>{'>'}</span> Shop</span>
+              <span>  Shop</span>
             </div>
           </div>
         </div>

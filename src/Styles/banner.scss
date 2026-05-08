@@ -9,16 +9,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
     .breadcrumb-banner {
         display: flex;
         width: 120px;
         justify-content: center;
         align-items: center;
+
         .bc-name {
             color: $text-primary;
             font-size: $font-size-base;
             font-weight: $font-weight-semiBold;
             text-decoration: none;
+
+            &::after {
+                content: '>';
+                margin-left: 5px;
+                font-size: 16px;
+                font-weight: 500;
+                transform: scaleX(0);
+                cursor: default;
+                // opacity: 1;
+            }
         }
     }
 }
