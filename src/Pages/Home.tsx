@@ -145,18 +145,18 @@ const Home = () => {
                 >
                   {details.map((item) => (
                     // <>
-                      <SwiperSlide key={item.id}>
-                        <div className="ss_card">
-                          <div className="ss_card_img">
-                            <img src={item.img} alt="" />
-                          </div>
-                          <div className="ss_card_content">
-                            <div className="ss_card_desc"> {item.desc} </div>
-                            <h2 className="card-title"> {item.title} </h2>
-                            <button className="card_btn"> {item.btn} </button>
-                          </div>
+                    <SwiperSlide key={item.id}>
+                      <div className="ss_card">
+                        <div className="ss_card_img">
+                          <img src={item.img} alt="" />
                         </div>
-                      </SwiperSlide>
+                        <div className="ss_card_content">
+                          <div className="ss_card_desc"> {item.desc} </div>
+                          <h2 className="card-title"> {item.title} </h2>
+                          <button className="card_btn"> {item.btn} </button>
+                        </div>
+                      </div>
+                    </SwiperSlide>
                     // </>
                   ))}
                 </Swiper>
@@ -165,13 +165,6 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-
-
-
-      {/* 
-      
-      */}
     </>
   );
 };

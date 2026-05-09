@@ -4,7 +4,7 @@
     background-image: url('@/assets/Shop/banner.webp');
     background-position: center;
     background-size: cover;
-    height: 55vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,25 +12,27 @@
 
     .breadcrumb-banner {
         display: flex;
-        width: 120px;
         justify-content: center;
         align-items: center;
+        gap: 6px;
 
         .bc-name {
             color: $text-primary;
             font-size: $font-size-base;
             font-weight: $font-weight-semiBold;
             text-decoration: none;
-
-            &::after {
-                content: '>';
-                margin-left: 5px;
-                font-size: 16px;
-                font-weight: 500;
-                transform: scaleX(0);
-                cursor: default;
-                // opacity: 1;
-            }
+            // &::after {
+            //     content: '>';
+            //     margin-left: 5px;
+            //     font-size: 16px;
+            //     font-weight: 500;
+            //     transform: scaleX(0);
+            //     cursor: default;;
+            //     // opacity: 1;
+            // }
+        }
+        .separator {
+            font-size: 20px;
         }
     }
 }

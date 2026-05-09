@@ -12,8 +12,9 @@ const Banner = () => {
           <div className="text-center align-items-center">
             <h1>Shop</h1>
             <div className="breadcrumb-banner">
-              <Link to="/" className='bc-name'> Home</Link>&nbsp;
-              <span>  Shop</span>
+              <Link to="/" className='bc-name'> Home</Link>
+              <span className="separator">&gt;</span>
+              <span> Shop</span>
             </div>
           </div>
         </div>

@@ -1,0 +1,84 @@
+@import 'variables';
+
+.filter-section {
+  background-color: #f9f9f9;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20px 0;
+
+  .filter-container {
+    .filter-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .results-info {
+      font-size: 14px;
+      color: #666;
+      white-space: nowrap;
+
+      span {
+        font-weight: 500;
+      }
+    }
+
+    .filter-controls {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+
+      @media (max-width: 768px) {
+        gap: 20px;
+        width: 100%;
+      }
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+        color: #333;
+        margin: 0;
+        white-space: nowrap;
+      }
+
+      select {
+        padding: 8px 12px;
+        border: 1px solid #d0d0d0;
+        border-radius: 4px;
+        background-color: white;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        min-width: 100px;
+        transition: border-color 0.3s ease;
+
+        &:hover {
+          border-color: #999;
+        }
+
+        &:focus {
+          outline: none;
+          border-color: $primary-color;
+          box-shadow: 0 0 0 2px rgba(176, 104, 79, 0.1);
+        }
+
+        option {
+          color: #333;
+          padding: 8px;
+        }
+      }
+    }
+  }
+}
