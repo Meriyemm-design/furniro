@@ -10,11 +10,7 @@ import likeWhite from "@assets/heart-white.webp";
 import compare from "@assets/compare.webp";
 
 const Products = () => {
-  const [isLikedById, setIsLikedById] = useState<{ [key: number]: boolean }>(
-    {}
-  );
-  const [isCompared, setIsCompared] = useState(false);
-  const [isShared, setIsShared] = useState(false);
+  const [isLikedById, setIsLikedById] = useState<{ [key: number]: boolean }>({});
 
   const info = [
     {
