@@ -201,6 +201,42 @@ const Shop = () => {
       oldPrice: "Rs. 3.500.000",
       new: "New",
     },
+    {
+      id: 21,
+      img: img3,
+      title: "Respira",
+      desc: "Stylish cafe chair",
+      price: "Rs. 2.500.000",
+      oldPrice: "Rs. 3.500.000",
+      new: "New",
+    },
+    {
+      id: 22,
+      img: img3,
+      title: "Respira",
+      desc: "Stylish cafe chair",
+      price: "Rs. 2.500.000",
+      oldPrice: "Rs. 3.500.000",
+      discount: "-30%",
+    },
+    {
+      id: 23,
+      img: img3,
+      title: "Respira",
+      desc: "Stylish cafe chair",
+      price: "Rs. 2.500.000",
+      oldPrice: "Rs. 3.500.000",
+      new: "New",
+    },
+    {
+      id: 24,
+      img: img3,
+      title: "Respira",
+      desc: "Stylish cafe chair",
+      price: "Rs. 2.500.000",
+      oldPrice: "Rs. 3.500.000",
+      new: "New",
+    },
   ];
 
   return (
