@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Banner from '../components/Banner'
 import Products from '../components/Products'
+import '@styles/shop.scss'
 
 import img from "@assets/image_1.webp";
 import img1 from "@assets/image_2.webp";
@@ -12,13 +13,14 @@ import share from "@assets/share.webp";
 import likeWhite from "@assets/heart-white.webp";
 import compare from "@assets/compare.webp";
 
+import FtBanner from '../components/FtBanner'
+
 const Shop = () => {
   const [isLikedById, setIsLikedById] = useState<{ [key: number]: boolean }>(
     {}
   );
   const [isCompared, setIsCompared] = useState(false);
   const [isShared, setIsShared] = useState(false);
-
 
   const info = [
     {
@@ -333,6 +335,8 @@ const Shop = () => {
           </div>
         </div>
       </div>
+
+      <FtBanner />
     </>
   )
 }
