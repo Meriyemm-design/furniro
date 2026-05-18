@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-// import HeroPnel from "../components/HeroPnel";
+import { useNavigate } from "react-router-dom";
 import "@styles/home.scss";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -38,6 +38,8 @@ import gp11 from '../assets/gp11.webp'
 import Products from "../components/Products";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const data = [
     {
       id: 1,
@@ -101,7 +103,7 @@ const Home = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis.
           </div>
-          <button className="more">Buy Now</button>
+          <button onClick={() => { navigate("/shop") }} className="more">Buy Now</button>
         </div>
       </div>
 
@@ -140,7 +142,7 @@ const Home = () => {
                     Our designer already made a lot of beautiful prototipe of
                     rooms that inspire you
                   </p>
-                  <button className="more">Explore Now</button>
+                  <button onClick={() => { navigate("/shop") }} className="more">Explore Now</button>
                 </div>
               </div>
               <div className="col-lg-8 right" style={{ width: "100%" }}>

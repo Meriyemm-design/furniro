@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-
+import { useNavigate } from "react-router-dom";
+  
 import img from "@assets/image_1.webp";
 import img1 from "@assets/image_2.webp";
 import img2 from "@assets/image_3.webp";
@@ -10,6 +11,7 @@ import likeWhite from "@assets/heart-white.webp";
 import compare from "@assets/compare.webp";
 
 const Products = () => {
+   const navigate = useNavigate();
   const [isLikedById, setIsLikedById] = useState<{ [key: number]: boolean }>({});
 
   const info = [
@@ -176,7 +178,7 @@ const Products = () => {
               </div>
             ))}
 
-            <button className="d_btn more"> Show More </button>
+            <button onClick={() => {navigate("/shop")}} className="d_btn more"> Show More </button>
           </div>
         </div>
       </div>

@@ -14,7 +14,9 @@ const Header = () => {
           <div className="row align-items-center">
             <div className="col-4">
               <div className="nav_img">
-                <img src={logo} alt="" style={{ width: "170px" }} />
+                <a href="/">
+                  <img src={logo} alt="" style={{ width: "170px" }} />
+                </a>
               </div>
             </div>
             <div className="col-4">
