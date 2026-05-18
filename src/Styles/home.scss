@@ -358,6 +358,54 @@
   }
 }
 
+// ======= Gallery Section =======
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  padding-bottom: 34px;
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  img:nth-child(2) {
+    align-self: end; // 🔹 Goes to bottom of its grid cell
+    aspect-ratio: 1/1;
+
+  }
+
+  img:nth-child(3) {
+    grid-column: 3 / 4;
+    height: 121%;
+  }
+
+  img:nth-child(7) {
+    grid-column: 4 / 5;
+    /* 7th image in 4th column */
+  }
+
+  /* Image 3 stacking */
+  img:nth-child(3) {
+    grid-column: 3; // 3rd column
+    grid-row: 1; // first row in this column
+  }
+
+  img:nth-child(8) {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  img:nth-child(12) {
+    grid-column: 3; // same column as image 3
+    grid-row: 3; // next row under image 8
+  }
+}
+
+
+// ========== Footer Section  ==========
 .footer-section {
   padding-top: 60px;
 

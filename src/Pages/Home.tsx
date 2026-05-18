@@ -23,6 +23,18 @@ import image2 from "@assets/image_2.webp";
 import image3 from "@assets/image_3.webp";
 import image4 from "@assets/image_4.webp";
 
+import gp1 from '../assets/gp1.webp'
+import gp2 from '../assets/gp2.webp'
+import gp3 from '../assets/gp3.webp'
+import gp4 from '../assets/gp4.webp'
+import gp5 from '../assets/gp5.webp'
+import gp6 from '../assets/gp6.webp'
+import gp7 from '../assets/gp7.webp'
+import gp8 from '../assets/gp8.webp'
+import gp9 from '../assets/gp9.webp'
+import gp10 from '../assets/gp10.webp'
+import gp11 from '../assets/gp11.webp'
+
 import Products from "../components/Products";
 
 const Home = () => {
@@ -164,6 +176,20 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className="gallery main-padding">
+        <img src={gp1} alt="" />
+        <img src={gp2} alt="" />
+        <img src={gp8} alt="" />
+        <img src={gp4} alt="" />
+        <img src={gp5} alt="" />
+        <img src={gp7} alt="" />
+        <img src={gp6} alt="" />
+        <img src={gp3} alt="" />
+        <img src={gp9} alt="" />
+        <img src={gp10} alt="" />
+        <img src={gp11} alt="" />
       </div>
     </>
   );
