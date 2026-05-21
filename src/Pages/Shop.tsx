@@ -14,6 +14,11 @@ import likeWhite from "@assets/heart-white.webp";
 import compare from "@assets/compare.webp";
 
 import FtBanner from '../components/FtBanner'
+import 'remixicon/fonts/remixicon.css'
+
+import filter from "@assets/Shop/filter_icon.webp";
+import grid from "@assets/Shop/grid_icon.webp";
+import list from "@assets/Shop/view_list.webp";
 
 const Shop = () => {
   const [isLikedById, setIsLikedById] = useState<{ [key: number]: boolean }>(
@@ -245,16 +250,89 @@ const Shop = () => {
     <>
       <Banner />
 
-
-      <div className="filter-section">
+      {/* <div className="filter-section">
         <div className="container">
           <div className="col-6">
-            <div className="filter">
-              
+            <div className="filter-left">
+              <button className="filter-icon">
+                <i className="ri-sound-module-line"></i>
+                Filter
+              </button>
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
+
+      {/* <section className="shop-toolbar">
+        <div className="container">
+          <div className="shop-toolbar__left">
+            <button className="filter-button" type="button">
+              <span className="filter-button__icon">&#9881;</span>
+              Filter
+            </button>
+          </div>
+
+          <div className="shop-toolbar__right">
+            <p className="results-text">Showing 1–16 of 32 results</p>
+            <div className="toolbar-controls">
+              <label className="control-group">
+                <span className="control-group__label">Show</span>
+                <select className="control-select">
+                  <option>16</option>
+                  <option>24</option>
+                  <option>32</option>
+                </select>
+              </label>
+
+              <label className="control-group">
+                <span className="control-group__label">Short by</span>
+                <select className="control-select">
+                  <option>Default</option>
+                  <option>Price: Low to High</option>
+                  <option>Price: High to Low</option>
+                  <option>Newest</option>
+                </select>
+              </label>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      <section className="filter-bar">
+        <div className="left-side">
+          <div className="filter-item">
+            <img src={filter} alt="filter" />
+            <span>Filter</span>
+          </div>
+
+          <div className="grid-icon">
+            <img src={grid} alt="grid" style={{width:"26px"}}/>
+          </div>
+
+          <div className="list-icon">
+            <img src={list} alt="list" />
+          </div>
+
+          <div className="divider"></div>
+
+          <p>Showing 1–16 of 32 results</p>
+        </div>
+
+        <div className="right-side">
+          <div className="show-box">
+            <span>Show</span>
+            <input type="text" placeholder="16" />
+          </div>
+
+          <div className="sort-box">
+            <span>Short by</span>
+            <input type="text" placeholder="Default" />
+          </div>
+        </div>
+      </section>
+
+
+      {/* Products */}
       <div className="products main-padding">
         <div className="container">
           <h2 className="c_title"> Our Products </h2>
