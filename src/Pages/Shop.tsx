@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import Banner from '../components/Banner'
-import Products from '../components/Products'
+// import Products from '../components/Products'
 import '@styles/shop.scss'
 
 import img from "@assets/image_1.webp";
@@ -245,6 +245,16 @@ const Shop = () => {
     <>
       <Banner />
 
+
+      <div className="filter-section">
+        <div className="container">
+          <div className="col-6">
+            <div className="filter">
+              
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="products main-padding">
         <div className="container">
           <h2 className="c_title"> Our Products </h2>
