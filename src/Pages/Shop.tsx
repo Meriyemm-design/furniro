@@ -208,42 +208,6 @@ const Shop = () => {
       oldPrice: "Rs. 3.500.000",
       new: "New",
     },
-    {
-      id: 21,
-      img: img3,
-      title: "Respira",
-      desc: "Stylish cafe chair",
-      price: "Rs. 2.500.000",
-      oldPrice: "Rs. 3.500.000",
-      new: "New",
-    },
-    {
-      id: 22,
-      img: img3,
-      title: "Respira",
-      desc: "Stylish cafe chair",
-      price: "Rs. 2.500.000",
-      oldPrice: "Rs. 3.500.000",
-      discount: "-30%",
-    },
-    {
-      id: 23,
-      img: img3,
-      title: "Respira",
-      desc: "Stylish cafe chair",
-      price: "Rs. 2.500.000",
-      oldPrice: "Rs. 3.500.000",
-      new: "New",
-    },
-    {
-      id: 24,
-      img: img3,
-      title: "Respira",
-      desc: "Stylish cafe chair",
-      price: "Rs. 2.500.000",
-      oldPrice: "Rs. 3.500.000",
-      new: "New",
-    },
   ];
 
   return (
@@ -419,7 +383,13 @@ const Shop = () => {
               </div>
             ))}
 
-            <button className="d_btn more"> Show More </button>
+            <div className="pagination">
+              <button className="page-number active">1</button>
+              <button className="page-number">2</button>
+              <button className="page-number">3</button>
+              <button className="page-number pg-next">Next</button>
+              <button className="page-number pg-prev">Previous</button>
+            </div>
           </div>
         </div>
       </div>

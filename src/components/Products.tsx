@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '@styles/products.scss';
 import { useNavigate } from "react-router-dom";
   
 import img from "@assets/image_1.webp";
