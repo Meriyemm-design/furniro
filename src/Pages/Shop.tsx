@@ -214,54 +214,6 @@ const Shop = () => {
     <>
       <Banner />
 
-      {/* <div className="filter-section">
-        <div className="container">
-          <div className="col-6">
-            <div className="filter-left">
-              <button className="filter-icon">
-                <i className="ri-sound-module-line"></i>
-                Filter
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
-
-      {/* <section className="shop-toolbar">
-        <div className="container">
-          <div className="shop-toolbar__left">
-            <button className="filter-button" type="button">
-              <span className="filter-button__icon">&#9881;</span>
-              Filter
-            </button>
-          </div>
-
-          <div className="shop-toolbar__right">
-            <p className="results-text">Showing 1–16 of 32 results</p>
-            <div className="toolbar-controls">
-              <label className="control-group">
-                <span className="control-group__label">Show</span>
-                <select className="control-select">
-                  <option>16</option>
-                  <option>24</option>
-                  <option>32</option>
-                </select>
-              </label>
-
-              <label className="control-group">
-                <span className="control-group__label">Short by</span>
-                <select className="control-select">
-                  <option>Default</option>
-                  <option>Price: Low to High</option>
-                  <option>Price: High to Low</option>
-                  <option>Newest</option>
-                </select>
-              </label>
-            </div>
-          </div>
-        </div>
-      </section> */}
-
       <section className="filter-bar">
         <div className="left-side">
           <div className="filter-item">
