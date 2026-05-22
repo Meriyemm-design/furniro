@@ -12,6 +12,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./Pages/Home";
 import Shop from "./Pages/Shop"
+import ProductDetailPage from "./Pages/ProductDetailPage";
 
 function App() {
   return (
@@ -21,8 +22,9 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
+          <Route path="/productdetailpage" element={<ProductDetailPage />} />
         </Routes>
-      <Footer />
+        <Footer />
       </BrowserRouter>
     </>
   );

@@ -121,7 +121,14 @@ const Home = () => {
                   <div className="bc_img">
                     <img src={item.img} alt="" />
                   </div>
-                  <div className="bc_title">{item.title} </div>
+                  {/* <div className="bc_title">{item.title} </div> */}
+                  {item.id === 2 ? (
+                    <div className="bc_title" onClick={() => navigate("/productdetailpage")}>
+                      {item.title}
+                    </div>
+                  ) : (
+                    <div className="bc_title">{item.title}</div>
+                  )}
                 </div>
               </div>
             ))}
