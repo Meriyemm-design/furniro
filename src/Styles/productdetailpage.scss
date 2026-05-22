@@ -365,3 +365,115 @@
     }
   }
 }
+
+
+.product-detail-tabs {
+  padding: 2.5rem 0 3.5rem;
+
+  .tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1.25rem;
+
+    .tab {
+      appearance: none;
+      border: none;
+      background: transparent;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      color: $text-secondary;
+      font-size: 15px;
+      border-bottom: 2px solid transparent;
+
+      &.active {
+        color: $text-primary;
+        border-bottom-color: $btn-primary-bg;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .tab-panels {
+    text-align: center;
+
+    .tab-panel {
+      padding: 0.5rem 0 1.5rem;
+
+      p {
+        color: $text-primary;
+        line-height: 1.8;
+        width: 85%;
+        margin: auto;
+      }
+
+      .desc-images {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1.25rem;
+
+        .desc-img-box {
+          background: $bg-card;
+          border-radius: $border-radius-normal;
+          box-shadow: 0 18px 42px rgba(89, 70, 47, 0.03);
+
+          img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+          }
+        }
+      }
+
+      .info-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 0.5rem;
+
+        th {
+          text-align: left;
+          padding: 0.75rem 0;
+          color: $text-secondary;
+          vertical-align: top;
+          width: 180px;
+        }
+
+        td {
+          padding: 0.75rem 0;
+          color: $text-primary;
+        }
+      }
+
+      .review-list {
+        .review {
+          padding: 1rem 0;
+          border-bottom: 1px solid #f1f1f1;
+
+          .rev-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+
+            .stars {
+              color: #ffc700;
+            }
+          }
+        }
+
+        .review-summary {
+          color: $text-secondary;
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .tab-panels .tab-panel .desc-images {
+      grid-template-columns: 1fr;
+    }
+  }
+}

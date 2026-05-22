@@ -5,6 +5,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 // import 'swiper/css'
 import '@styles/productdetailpage.scss'
+import '@styles/productdetailpage-tabs.scss'
 
 import thumb1 from '@assets/ProductDetail/thumb1.webp'
 import thumb2 from '@assets/ProductDetail/thumb1.webp'
@@ -22,6 +23,7 @@ const colors = [
 const AsgaardSofa = () => {
   const swiperRef = useRef<SwiperType | null>(null)
   const [activeImage, setActiveImage] = useState(0)
+  const [activeTab, setActiveTab] = useState<'description' | 'additional' | 'reviews'>('description')
   const [selectedSize, setSelectedSize] = useState<(typeof sizes)[number]>('L')
   const [selectedColor, setSelectedColor] = useState(colors[0].id)
   const [quantity, setQuantity] = useState(1)
@@ -194,6 +196,96 @@ const AsgaardSofa = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="product-detail-tabs">
+        <div className="container">
+          <div className="tabs-nav">
+            <button className={`tab ${activeTab === 'description' ? 'active' : ''}`} onClick={() => setActiveTab('description')}>Description</button>
+            <button className={`tab ${activeTab === 'additional' ? 'active' : ''}`} onClick={() => setActiveTab('additional')}>Additional Information</button>
+            <button className={`tab ${activeTab === 'reviews' ? 'active' : ''}`} onClick={() => setActiveTab('reviews')}>Reviews [5]</button>
+          </div>
+
+          <div className="tab-panels">
+            {activeTab === 'description' && (
+              <div className="tab-panel description">
+                <p>
+                  Embodying the raw, wayward spirit of rock 'n' roll, the Kilburn portable active stereo speaker takes the unmistakable look and
+                  sound of Marshall, unplugs the chords, and takes the show on the road.
+                </p>
+
+                <p>
+                  Weighing in under 7 pounds, the Kilburn is a lightweight piece of vintage styled engineering. Setting the bar as one of the
+                  loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear
+                  midrange and extended highs for a sound that is both articulate and pronounced. The analogue knobs allow you to fine tune the
+                  controls to your personal preferences while the guitar-influenced leather strap enables easy and stylish travel.
+                </p>
+
+                <div className="desc-images">
+                  <div className="desc-img-box">
+                    <img src={thumb3} alt="sofa detail 1" />
+                  </div>
+                  <div className="desc-img-box">
+                    <img src={thumb4} alt="sofa detail 2" />
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {activeTab === 'additional' && (
+              <div className="tab-panel additional">
+                <table className="info-table">
+                  <tbody>
+                    <tr>
+                      <th>Material</th>
+                      <td>Solid wood, Upholstery fabric</td>
+                    </tr>
+                    <tr>
+                      <th>Dimensions</th>
+                      <td>W 240cm × D 95cm × H 85cm</td>
+                    </tr>
+                    <tr>
+                      <th>Weight</th>
+                      <td>approx. 45 kg</td>
+                    </tr>
+                    <tr>
+                      <th>Color</th>
+                      <td>Beige, Navy, Black</td>
+                    </tr>
+                    <tr>
+                      <th>Warranty</th>
+                      <td>2 years manufacturer's warranty</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            )}
+
+            {activeTab === 'reviews' && (
+              <div className="tab-panel reviews">
+                <div className="review-list">
+                  <article className="review">
+                    <div className="rev-head">
+                      <strong>John D.</strong>
+                      <span className="stars">★★★★★</span>
+                    </div>
+                    <p>Beautifully made, very comfortable and a pleasure to own.</p>
+                  </article>
+
+                  <article className="review">
+                    <div className="rev-head">
+                      <strong>Emma R.</strong>
+                      <span className="stars">★★★★☆</span>
+                    </div>
+                    <p>Great sofa, color matched perfectly to our living room.</p>
+                  </article>
+
+                  <p className="review-summary">Showing 2 of 5 reviews.</p>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </section>
