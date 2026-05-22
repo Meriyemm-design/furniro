@@ -117,18 +117,25 @@ const Home = () => {
           <div className="row justify-content-center">
             {data.map((item) => (
               <div className="col-3" key={item.id}>
-                <div className="browse-card">
+                <div className="browse-card" onClick={() => {
+                  if (item.id === 2) {
+                    navigate("/productdetailpage");
+                  }
+                }}>
                   <div className="bc_img">
                     <img src={item.img} alt="" />
                   </div>
-                  {/* <div className="bc_title">{item.title} </div> */}
-                  {item.id === 2 ? (
+                  <div className="bc_title">{item.title} </div>
+
+                  {/* {item.id === 2 ? (
                     <div className="bc_title" onClick={() => navigate("/productdetailpage")}>
                       {item.title}
                     </div>
                   ) : (
                     <div className="bc_title">{item.title}</div>
-                  )}
+                  )} */}
+                  {/* Added onClick event to navigate to the product detail page only when id = 2   */}
+
                 </div>
               </div>
             ))}

@@ -1,84 +1,48 @@
 @use "variables" as *;
 
 .asgaard-sofa-page {
-  min-height: 100vh;
-  padding: 2rem 1.25rem;
-  background-color: #f7efe2;
-  color: #3c3631;
-}
+  background: $bg-banner;
+  padding: 2rem;
 
-.asgaard-sofa-breadcrumb {
-  max-width: 1200px;
-  margin: 0 auto 1.75rem;
-  padding: 1rem 1rem 0.75rem;
-  background: rgba(250, 244, 236, 0.95);
-  border-radius: 14px;
-  box-shadow: 0 6px 18px rgba(46, 36, 24, 0.06);
-}
+  .asgaard-sofa-breadcrumb {}
 
-.breadcrumb-path {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  font-size: 0.95rem;
-  line-height: 1.4;
-  color: #7b7063;
-}
+  .breadcrumb-path {
+    display: inline-flex;
+    align-items: $flex-center;
+    gap: 0.75rem;
+  }
 
-.breadcrumb-path .bc-name {
-  color: #7b7063;
-  text-decoration: none;
-}
+  .breadcrumb-path .bc-name {
+    color: $text-secondary;
+    text-decoration: none;
+  }
 
-.breadcrumb-path .bc-name:hover {
-  text-decoration: underline;
-}
+  .breadcrumb-path .bc-name:hover {
+    color: #000;
+  }
 
-.breadcrumb-path .separator {
-  color: #b7aa98;
-  font-weight: 600;
-}
+  .breadcrumb-path .separator {
+    color: #000;
+    font-size: $font-size-normal;
+    font-weight: 500;
+  }
 
-.breadcrumb-current {
-  display: inline-flex;
-  align-items: center;
-  position: relative;
-  padding-left: 1rem;
-  color: #352d28;
-  font-weight: 600;
-}
+  .breadcrumb-current {
+    display: inline-flex;
+    align-items: $flex-center;
+    position: relative;
+    padding-left: $spacing-lg;
+    color: #352d28;
+    font-weight: 600;
+  }
 
-.breadcrumb-current::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 1px;
-  height: 18px;
-  background: #d7c7b1;
+  .breadcrumb-current::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 1.5px;
+    height: 26px;
+    background: $text-secondary;
+    margin-left: 5px;
+  }
 }
-
-.asgaard-sofa-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem;
-  background: #fffdf9;
-  border-radius: 22px;
-  box-shadow: 0 18px 42px rgba(89, 70, 47, 0.08);
-}
-
-.asgaard-sofa-content .content-inner {
-  max-width: 760px;
-}
-
-.asgaard-sofa-content h1 {
-  margin-bottom: 1rem;
-  font-size: 2.4rem;
-  letter-spacing: -0.03em;
-}
-
-.asgaard-sofa-content p {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: #5d5248;
-}
-
