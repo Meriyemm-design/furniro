@@ -1,0 +1,103 @@
+@use "variables" as *;
+
+.filter-bar {
+    background: #f9f1e7;
+    padding: 25px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    .left-side {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+
+        .filter-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+
+            span {
+                font-size: 20px;
+                color: #000;
+            }
+
+            img {
+                width: 22px;
+            }
+        }
+
+        .grid-icon,
+        .list-icon {
+            img {
+                width: 22px;
+                cursor: pointer;
+            }
+        }
+
+        .divider {
+            width: 2px;
+            height: 35px;
+            background: #9f9f9f;
+        }
+
+        p {
+            font-size: 16px;
+            color: #000;
+            margin: 0;
+        }
+    }
+
+    .right-side {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        .show-box,
+        .sort-box {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+
+            span {
+                font-size: 20px;
+                color: #000;
+            }
+
+            input {
+                border: none;
+                outline: none;
+                background: #fff;
+                height: 55px;
+                padding: 15px;
+                font-size: 18px;
+                color: #9f9f9f;
+            }
+        }
+
+        .show-box input {
+            width: 55px;
+            text-align: center;
+        }
+
+        .sort-box input {
+            width: 180px;
+        }
+    }
+}
+
+@media (max-width: 992px) {
+    .filter-bar {
+        padding: 20px;
+
+        .left-side,
+        .right-side {
+            width: 100%;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+    }
+}
