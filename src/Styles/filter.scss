@@ -4,19 +4,19 @@
     background: #f9f1e7;
     padding: 25px 60px;
     display: flex;
-    align-items: center;
+    align-items: $flex-center;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 20px;
 
     .left-side {
         display: flex;
-        align-items: center;
+        align-items: $flex-center;
         gap: 25px;
 
         .filter-item {
             display: flex;
-            align-items: center;
+            align-items: $flex-center;
             gap: 10px;
             cursor: pointer;
 
@@ -53,13 +53,13 @@
 
     .right-side {
         display: flex;
-        align-items: center;
+        align-items: $flex-center;
         gap: 30px;
 
         .show-box,
         .sort-box {
             display: flex;
-            align-items: center;
+            align-items: $flex-center;
             gap: 15px;
 
             span {
@@ -80,7 +80,7 @@
 
         .show-box input {
             width: 55px;
-            text-align: center;
+            text-align: $flex-center;
         }
 
         .sort-box input {
@@ -96,7 +96,7 @@
         .left-side,
         .right-side {
             width: 100%;
-            justify-content: center;
+            justify-content: $flex-center;
             flex-wrap: wrap;
         }
     }

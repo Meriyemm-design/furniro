@@ -93,7 +93,7 @@ img {
   .nav_links {
     ul {
       display: flex;
-      align-items: center;
+      align-items: $flex-center;
       justify-content: space-between;
       margin: 0;
       padding: 0;
@@ -116,7 +116,7 @@ img {
 
   .info_icons {
     display: flex;
-    align-items: center;
+    align-items: $flex-center;
     justify-content: end;
     gap: 54px;
   }

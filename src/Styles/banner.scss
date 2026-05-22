@@ -2,18 +2,18 @@
 
 .banner-section {
     background-image: url('@/assets/Shop/banner.webp');
-    background-position: center;
+    background-position: $flex-center;
     background-size: cover;
     height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: $flex-center;
+    align-items: $flex-center;
 
     .breadcrumb-banner {
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: $flex-center;
+        align-items: $flex-center;
         gap: 6px;
 
         .bc-name {

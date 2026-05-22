@@ -5,15 +5,15 @@
 
     .feature-grid {
         display: flex;
-        justify-content: center;
+        justify-content: $flex-center;
         gap: 20px;
         min-height: 90px;
 
         .feature-card {
             display: flex;
             gap: 10px;
-            align-items: center;
-            justify-content: center;
+            align-items: $flex-center;
+            justify-content: $flex-center;
             width: 100%;
 
             .feature-icon {
@@ -21,8 +21,8 @@
                 height: 60px;
                 // border-radius: 50%;
                 display: flex;
-                align-items: center;
-                justify-content: center;
+                align-items: $flex-center;
+                justify-content: $flex-center;
                 // background: rgba(23, 105, 255, 0.12);
                 color: #175eff;
                 // font-size: 45px;
