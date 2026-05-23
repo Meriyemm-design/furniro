@@ -4,27 +4,29 @@
   background: $bg-banner;
   padding: 2rem;
 
-  .asgaard-sofa-breadcrumb {}
+  .asgaard-sofa-breadcrumb {
+  }
 
   .breadcrumb-path {
     display: inline-flex;
     align-items: $flex-center;
     gap: 0.75rem;
-  }
 
-  .breadcrumb-path .bc-name {
-    color: $text-secondary;
-    text-decoration: none;
-  }
+    .bc-name {
+      color: $text-secondary;
+      text-decoration: none;
+      transition: all $transition-speed $transition-ease;
 
-  .breadcrumb-path .bc-name:hover {
-    color: #000;
-  }
+      &:hover {
+        color: #000;
+      }
+    }
 
-  .breadcrumb-path .separator {
-    color: #000;
-    font-size: $font-size-normal;
-    font-weight: 500;
+    .separator {
+      color: #000;
+      font-size: $font-size-normal;
+      font-weight: 500;
+    }
   }
 
   .breadcrumb-current {
@@ -34,16 +36,16 @@
     padding-left: $spacing-lg;
     color: #352d28;
     font-weight: 600;
-  }
 
-  .breadcrumb-current::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    width: 1.5px;
-    height: 26px;
-    background: $text-secondary;
-    margin-left: 5px;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 1.5px;
+      height: 26px;
+      background: $text-secondary;
+      margin-left: 5px;
+    }
   }
 }
 
@@ -94,7 +96,7 @@
 
   .product-detail__main-image {
     flex: 1;
-    background: $bg-card;
+    background: $bg-banner;
     border-radius: $border-radius-normal;
     overflow: hidden;
     min-height: 400px;
@@ -415,7 +417,7 @@
         margin-top: 1.25rem;
 
         .desc-img-box {
-          background: $bg-card;
+          background: $bg-banner;
           border-radius: $border-radius-normal;
           box-shadow: 0 18px 42px rgba(89, 70, 47, 0.03);
 
