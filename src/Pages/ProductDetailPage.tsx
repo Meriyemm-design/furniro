@@ -1,15 +1,22 @@
 import { useRef, useState } from 'react'
+import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
 import { FaStar, FaStarHalfAlt, FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 // import 'swiper/css'
 import '@styles/productdetailpage.scss'
+import '@styles/products.scss';
 
 import thumb1 from '@assets/ProductDetail/thumb1.webp'
 import thumb2 from '@assets/ProductDetail/thumb1.webp'
 import thumb3 from '@assets/ProductDetail/thumb1.webp'
 import thumb4 from '@assets/ProductDetail/thumb1.webp'
+
+import img from "@assets/image_1.webp";
+import img1 from "@assets/image_2.webp";
+import img2 from "@assets/image_3.webp";
+import img3 from "@assets/image_4.webp";
 
 const galleryImages = [thumb1, thumb2, thumb3, thumb4]
 const sizes = ['L', 'XL', 'XS'] as const
@@ -29,6 +36,47 @@ const AsgaardSofa = () => {
 
   const decrementQty = () => setQuantity((q) => Math.max(1, q - 1))
   const incrementQty = () => setQuantity((q) => q + 1)
+
+  const navigate = useNavigate();
+
+  const info = [
+    {
+      id: 1,
+      img: img,
+      title: "Slytherine",
+      desc: "Stylish cafe chair",
+      price: "Rs. 2.500.000",
+      oldPrice: "Rs. 3.500.000",
+      discount: "-30%",
+    },
+    {
+      id: 2,
+      img: img1,
+      title: "Laviosa",
+      desc: "Stylish cafe chair",
+      price: "Rs. 2.500.000",
+      oldPrice: "Rs. 3.500.000",
+      discount: "-30%",
+    },
+    {
+      id: 3,
+      img: img2,
+      title: "Lolito",
+      desc: "Stylish cafe chair",
+      price: "Rs. 2.500.000",
+      oldPrice: "Rs. 3.500.000",
+      discount: "-30%",
+    },
+    {
+      id: 4,
+      img: img3,
+      title: "Respira",
+      desc: "Stylish cafe chair",
+      price: "Rs. 2.500.000",
+      oldPrice: "Rs. 3.500.000",
+      new: "New",
+    },
+  ];
 
   return (
     <>
@@ -288,6 +336,49 @@ const AsgaardSofa = () => {
           </div>
         </div>
       </section>
+
+      <div className="products related-products main-padding">
+        <div className="container">
+          <div className="c_title"> Related Products </div>
+
+          <div className="row">
+            {info.map((items) => (
+              <div className="col-3 product-wrapper">
+                <div className="product-card">
+                  <div className="product-card__image-wrapper">
+                    <img
+                      src={items.img}
+                      alt="Syltherine Stylish cafe chair"
+                      className="product-card__image"
+                    />
+                    <div
+                      className={`product-card__discount-badge ${items.discount ? "product-card__discount-badge" : "new"
+                        }`}
+                    >
+                      {items.discount ? items.discount : items.new}
+                    </div>
+                  </div>
+                  <div className="product-card__details">
+                    <div className="product-card__title">{items.title}</div>
+                    <div className="product-card__description">
+                      {items.desc}
+                    </div>
+                    <div className="product-card__prices">
+                      <span className="product-card__price">{items.price}</span>
+                      <span className="product-card__old-price">
+                        {items.price}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            ))}
+
+            <button onClick={() => { navigate("/shop") }} className="d_btn more"> Show More </button>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
