@@ -4,8 +4,7 @@
   background: $bg-banner;
   padding: 2rem;
 
-  .asgaard-sofa-breadcrumb {
-  }
+  .asgaard-sofa-breadcrumb {}
 
   .breadcrumb-path {
     display: inline-flex;
@@ -164,9 +163,8 @@
   }
 
   .product-detail__description {
-    font-size: 13px;
+    font-size: $font-size-sm;
     line-height: 1.6;
-    color: $text-primary;
     margin-bottom: 1.5rem;
     max-width: 420px;
   }
@@ -289,9 +287,9 @@
 
   .product-detail__meta-row {
     display: flex;
-    align-items: center;
+    align-items: $flex-center;
     gap: 0.35rem;
-    font-size: 13px;
+    font-size: $font-size-sm;
     color: $text-secondary;
   }
 
@@ -316,8 +314,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 22px;
-      height: 22px;
+      width: 26px;
+      height: 26px;
       border-radius: $border-radius-round;
       background: $text-primary;
       color: $text-white;
@@ -376,7 +374,7 @@
     display: flex;
     justify-content: center;
     gap: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid $border-btm;
     margin-bottom: 1.25rem;
 
     .tab {
@@ -404,10 +402,14 @@
       padding: 0.5rem 0 1.5rem;
 
       p {
+        width: 90%;
+        margin: auto;
+      }
+
+      .rating {
         color: $text-primary;
         line-height: 1.8;
-        width: 85%;
-        margin: auto;
+        margin: 0;
       }
 
       .desc-images {
@@ -430,6 +432,8 @@
       }
 
       .info-table {
+        display: flex;
+        justify-content: center;
         width: 100%;
         border-collapse: collapse;
         margin-top: 0.5rem;
@@ -451,17 +455,18 @@
       .review-list {
         .review {
           padding: 1rem 0;
-          border-bottom: 1px solid #f1f1f1;
+          border-bottom: 1px solid $border-btm;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
 
-          .rev-head {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+          .rev-name {
             margin-bottom: 0.5rem;
 
-            .stars {
-              color: #ffc700;
-            }
+          }
+
+          .stars {
+            color: #ffc700;
           }
         }
 

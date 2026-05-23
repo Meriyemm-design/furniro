@@ -158,7 +158,7 @@ const AsgaardSofa = () => {
                   Add To Cart
                 </button>
                 <button type="button" className="product-detail__btn product-detail__btn--compare">
-                  + Compare
+                  + &nbsp;Compare
                 </button>
               </div>
 
@@ -266,19 +266,19 @@ const AsgaardSofa = () => {
               <div className="tab-panel reviews">
                 <div className="review-list">
                   <article className="review">
-                    <div className="rev-head">
+                    <div className="rev-name">
                       <strong>John D.</strong>
-                      <span className="stars">★★★★★</span>
                     </div>
-                    <p>Beautifully made, very comfortable and a pleasure to own.</p>
+                    <p className="rating">Beautifully made, very comfortable and a pleasure to own.</p>
+                    <span className="stars">★★★★★</span>
                   </article>
 
                   <article className="review">
-                    <div className="rev-head">
+                    <div className="rev-name">
                       <strong>Emma R.</strong>
-                      <span className="stars">★★★★☆</span>
                     </div>
-                    <p>Great sofa, color matched perfectly to our living room.</p>
+                    <p className="rating">Great sofa, color matched perfectly to our living room.</p>
+                    <span className="stars">★★★★☆</span>
                   </article>
 
                   <p className="review-summary">Showing 2 of 5 reviews.</p>
