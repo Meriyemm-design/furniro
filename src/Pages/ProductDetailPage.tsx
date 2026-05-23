@@ -5,7 +5,6 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 // import 'swiper/css'
 import '@styles/productdetailpage.scss'
-import '@styles/productdetailpage-tabs.scss'
 
 import thumb1 from '@assets/ProductDetail/thumb1.webp'
 import thumb2 from '@assets/ProductDetail/thumb1.webp'
