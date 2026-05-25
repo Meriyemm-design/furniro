@@ -1,7 +1,8 @@
+// ProductDetailPage.tsx
 import { useRef, useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom'
-import { FaStar, FaStarHalfAlt, FaFacebookF, FaLinkedinIn, FaTwitter } from 'react-icons/fa'
+import { FaStar, FaStarHalfAlt, FaFacebookF, FaLinkedinIn, FaTwitter, FaTimes, FaShoppingBag, FaTrash } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import type { Swiper as SwiperType } from 'swiper'
 // import 'swiper/css'
@@ -18,6 +19,9 @@ import img1 from "@assets/image_2.webp";
 import img2 from "@assets/image_3.webp";
 import img3 from "@assets/image_4.webp";
 
+import closeIcon from '@assets/ProductDetail/cart_cancel.webp';
+import removeIcon from '@assets/ProductDetail/remove.webp';
+
 const galleryImages = [thumb1, thumb2, thumb3, thumb4]
 const sizes = ['L', 'XL', 'XS'] as const
 const colors = [
@@ -26,6 +30,17 @@ const colors = [
   { id: 'gold', value: '#B88E2F' },
 ] as const
 
+// Cart Item Type
+interface CartItem {
+  id: string
+  name: string
+  price: number
+  size: string
+  color: string
+  quantity: number
+  image: string
+}
+
 const AsgaardSofa = () => {
   const swiperRef = useRef<SwiperType | null>(null)
   const [activeImage, setActiveImage] = useState(0)
@@ -33,11 +48,73 @@ const AsgaardSofa = () => {
   const [selectedSize, setSelectedSize] = useState<(typeof sizes)[number]>('L')
   const [selectedColor, setSelectedColor] = useState(colors[0].id)
   const [quantity, setQuantity] = useState(1)
+  const [isCartOpen, setIsCartOpen] = useState(false)
+  const [cartItems, setCartItems] = useState<CartItem[]>([])
 
   const decrementQty = () => setQuantity((q) => Math.max(1, q - 1))
   const incrementQty = () => setQuantity((q) => q + 1)
 
   const navigate = useNavigate();
+
+  // Add to cart function
+  const addToCart = () => {
+    const newItem: CartItem = {
+      id: `asgaard-sofa-${Date.now()}`,
+      name: 'Asgaard sofa',
+      price: 250000,
+      size: selectedSize,
+      color: selectedColor,
+      quantity: quantity,
+      image: galleryImages[activeImage],
+    }
+
+    setCartItems(prevItems => {
+      // Check if item with same size and color exists
+      const existingItemIndex = prevItems.findIndex(
+        item => item.name === newItem.name && 
+                item.size === newItem.size && 
+                item.color === newItem.color
+      )
+
+      if (existingItemIndex > -1) {
+        // Update existing item quantity
+        const updatedItems = [...prevItems]
+        updatedItems[existingItemIndex].quantity += quantity
+        return updatedItems
+      } else {
+        // Add new item
+        return [...prevItems, newItem]
+      }
+    })
+
+    // Open the cart sidebar
+    setIsCartOpen(true)
+  }
+
+  // Remove item from cart
+  const removeFromCart = (itemId: string) => {
+    setCartItems(prevItems => prevItems.filter(item => item.id !== itemId))
+  }
+
+  // Update item quantity
+  const updateQuantity = (itemId: string, newQuantity: number) => {
+    if (newQuantity < 1) return
+    setCartItems(prevItems =>
+      prevItems.map(item =>
+        item.id === itemId ? { ...item, quantity: newQuantity } : item
+      )
+    )
+  }
+
+  // Calculate cart total
+  const getCartTotal = () => {
+    return cartItems.reduce((total, item) => total + (item.price * item.quantity), 0)
+  }
+
+  // Get cart item count
+  const getCartItemCount = () => {
+    return cartItems.reduce((count, item) => count + item.quantity, 0)
+  }
 
   const info = [
     {
@@ -80,6 +157,110 @@ const AsgaardSofa = () => {
 
   return (
     <>
+      {/* Overlay */}
+      {isCartOpen && (
+        <div 
+          className="cart-overlay"
+          onClick={() => setIsCartOpen(false)}
+        />
+      )}
+
+      {/* Add to Cart Sliding Screen */}
+      <div className={`cart-slider ${isCartOpen ? 'open' : ''}`}>
+        <div className="cart-slider__header">
+          <h3>Shopping Cart
+             {/* ({getCartItemCount()}) */}
+          </h3>
+          <button 
+            className="cart-slider__close"
+            onClick={() => setIsCartOpen(false)}
+          >
+            <FaTimes />
+          </button>
+        </div>
+
+        <div className="cart-slider__content">
+          {cartItems.length === 0 ? (
+            <div className="cart-slider__empty">
+              <FaShoppingBag />
+              <p>Your cart is empty</p>
+              <button 
+                className="cart-slider__continue-btn"
+                onClick={() => setIsCartOpen(false)}
+              >
+                Continue Shopping
+              </button>
+            </div>
+          ) : (
+            <>
+              <div className="cart-slider__items">
+                {cartItems.map(item => (
+                  <div key={item.id} className="cart-slider__item">
+                    <div className="cart-item__image">
+                      <img src={item.image} alt={item.name} />
+                    </div>
+                    <div className="cart-item__details">
+                      <h4 className="cart-item__name">{item.name}</h4>
+                      <div className="cart-item__meta">
+                        <span>Size: {item.size}</span>
+                        <span>Color: {item.color}</span>
+                      </div>
+                      <div className="cart-item__price-row">
+                        <div className="cart-item__quantity">
+                          <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>
+                            -
+                          </button>
+                          <span>{item.quantity}</span>
+                          <button onClick={() => updateQuantity(item.id, item.quantity + 1)}>
+                            +
+                          </button>
+                        </div>
+                        <div className="cart-item__price">
+                          Rs. {(item.price * item.quantity).toLocaleString()}
+                        </div>
+                        <button 
+                          className="cart-item__remove"
+                          onClick={() => removeFromCart(item.id)}
+                        >
+                          <FaTrash />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="cart-slider__footer">
+                <div className="cart-slider__total">
+                  <span>Subtotal:</span>
+                  <span>Rs. {getCartTotal().toLocaleString()}</span>
+                </div>
+                <div className="cart-slider__actions">
+                  <button 
+                    className="cart-slider__view-cart"
+                    onClick={() => {
+                      setIsCartOpen(false)
+                      navigate('/cart')
+                    }}
+                  >
+                    View Cart
+                  </button>
+                  <button 
+                    className="cart-slider__checkout"
+                    onClick={() => {
+                      setIsCartOpen(false)
+                      navigate('/checkout')
+                    }}
+                  >
+                    Checkout
+                  </button>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </div>
+
       <section className="asgaard-sofa-page">
         <div className="container">
           <div className="asgaard-sofa-breadcrumb">
@@ -202,7 +383,11 @@ const AsgaardSofa = () => {
                     +
                   </button>
                 </div>
-                <button type="button" className="product-detail__btn product-detail__btn--cart">
+                <button 
+                  type="button" 
+                  className="product-detail__btn product-detail__btn--cart"
+                  onClick={addToCart}
+                >
                   Add To Cart
                 </button>
                 <button type="button" className="product-detail__btn product-detail__btn--compare">
@@ -343,7 +528,7 @@ const AsgaardSofa = () => {
 
           <div className="row">
             {info.map((items) => (
-              <div className="col-3 product-wrapper">
+              <div key={items.id} className="col-3 product-wrapper">
                 <div className="product-card">
                   <div className="product-card__image-wrapper">
                     <img
@@ -366,7 +551,7 @@ const AsgaardSofa = () => {
                     <div className="product-card__prices">
                       <span className="product-card__price">{items.price}</span>
                       <span className="product-card__old-price">
-                        {items.price}
+                        {items.oldPrice}
                       </span>
                     </div>
                   </div>
