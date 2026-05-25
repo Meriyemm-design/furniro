@@ -71,9 +71,9 @@ const AsgaardSofa = () => {
     setCartItems(prevItems => {
       // Check if item with same size and color exists
       const existingItemIndex = prevItems.findIndex(
-        item => item.name === newItem.name && 
-                item.size === newItem.size && 
-                item.color === newItem.color
+        item => item.name === newItem.name &&
+          item.size === newItem.size &&
+          item.color === newItem.color
       )
 
       if (existingItemIndex > -1) {
@@ -159,7 +159,7 @@ const AsgaardSofa = () => {
     <>
       {/* Overlay */}
       {isCartOpen && (
-        <div 
+        <div
           className="cart-overlay"
           onClick={() => setIsCartOpen(false)}
         />
@@ -169,9 +169,9 @@ const AsgaardSofa = () => {
       <div className={`cart-slider ${isCartOpen ? 'open' : ''}`}>
         <div className="cart-slider__header">
           <h3>Shopping Cart
-             {/* ({getCartItemCount()}) */}
+            {/* ({getCartItemCount()}) */}
           </h3>
-          <button 
+          <button
             className="cart-slider__close"
             onClick={() => setIsCartOpen(false)}
           >
@@ -184,7 +184,7 @@ const AsgaardSofa = () => {
             <div className="cart-slider__empty">
               <FaShoppingBag />
               <p>Your cart is empty</p>
-              <button 
+              <button
                 className="cart-slider__continue-btn"
                 onClick={() => setIsCartOpen(false)}
               >
@@ -193,6 +193,7 @@ const AsgaardSofa = () => {
             </div>
           ) : (
             <>
+              {/* // Update the cart-slider__item section in your component */}
               <div className="cart-slider__items">
                 {cartItems.map(item => (
                   <div key={item.id} className="cart-slider__item">
@@ -200,13 +201,18 @@ const AsgaardSofa = () => {
                       <img src={item.image} alt={item.name} />
                     </div>
                     <div className="cart-item__details">
-                      <h4 className="cart-item__name">{item.name}</h4>
-                      <div className="cart-item__meta">
-                        <span>Size: {item.size}</span>
-                        <span>Color: {item.color}</span>
+                      <div className="cart-item__info">
+                        <h4 className="cart-item__name">{item.name}</h4>
+                        <div className="cart-item__price-row">
+                          <span className="cart-item__quantity-info">{item.quantity} x</span>
+                          <span className="cart-item__price">
+                            Rs. {item.price.toLocaleString()}
+                          </span>
+                        </div>
                       </div>
-                      <div className="cart-item__price-row">
+                      <div className="cart-item__actions">
                         <div className="cart-item__quantity">
+                          <label>Qty:</label>
                           <button onClick={() => updateQuantity(item.id, item.quantity - 1)}>
                             -
                           </button>
@@ -215,14 +221,11 @@ const AsgaardSofa = () => {
                             +
                           </button>
                         </div>
-                        <div className="cart-item__price">
-                          Rs. {(item.price * item.quantity).toLocaleString()}
-                        </div>
-                        <button 
+                        <button
                           className="cart-item__remove"
                           onClick={() => removeFromCart(item.id)}
                         >
-                          <FaTrash />
+                          Remove
                         </button>
                       </div>
                     </div>
@@ -232,20 +235,20 @@ const AsgaardSofa = () => {
 
               <div className="cart-slider__footer">
                 <div className="cart-slider__total">
-                  <span>Subtotal:</span>
+                  <span>Subtotal</span>
                   <span>Rs. {getCartTotal().toLocaleString()}</span>
                 </div>
                 <div className="cart-slider__actions">
-                  <button 
+                  <button
                     className="cart-slider__view-cart"
                     onClick={() => {
                       setIsCartOpen(false)
                       navigate('/cart')
                     }}
                   >
-                    View Cart
+                    Cart
                   </button>
-                  <button 
+                  <button
                     className="cart-slider__checkout"
                     onClick={() => {
                       setIsCartOpen(false)
@@ -253,6 +256,15 @@ const AsgaardSofa = () => {
                     }}
                   >
                     Checkout
+                  </button>
+                  <button
+                    className="cart-slider__comparison"
+                    onClick={() => {
+                      setIsCartOpen(false)
+                      navigate('/comparison')
+                    }}
+                  >
+                    Comparison
                   </button>
                 </div>
               </div>
@@ -383,8 +395,8 @@ const AsgaardSofa = () => {
                     +
                   </button>
                 </div>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className="product-detail__btn product-detail__btn--cart"
                   onClick={addToCart}
                 >
